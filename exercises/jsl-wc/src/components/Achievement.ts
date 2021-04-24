@@ -3,14 +3,6 @@ import { html, css, LitElement } from 'lit-element';
 import '../registry/badge.js';
 
 export class Achievement extends LitElement {
-  title: string = "Bronze User";
-
-  description: string = "Has posted more than 1 post on their profile";
-
-  progress: number = 100;
-
-  tooltip: string = "UNLOCKED!";
-
   static get styles() {
     return css`
       :host {
@@ -92,10 +84,41 @@ export class Achievement extends LitElement {
     `;
   }
 
+  static get properties() {
+    return {
+      badge: {type: String},
+      title: {type: String},
+      description: {type: String},
+      progress: {type: String},
+      tooltip: {type: String},
+    }
+  }
+
+  badge: string;
+
+  title: string;
+
+  description: string;
+
+  progress: number;
+
+  tooltip: string;
+
+  constructor() {
+    super();
+
+    this.badge = '';
+    this.title = '';
+    this.description = '';
+    this.progress = 0;
+    this.tooltip = '';
+  }
+
+
   render() {
     return html`
       <div class="achievement-card">
-        <jsl-badge></jsl-badge>
+        <jsl-badge badge="${this.badge}"></jsl-badge>
         <p class="stat-title">${this.title}</p>
         <p class="stat-description">${this.description}</p>
         <div class="stat-progress">
