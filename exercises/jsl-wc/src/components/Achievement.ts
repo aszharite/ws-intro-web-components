@@ -2,6 +2,8 @@ import { html, css, LitElement } from 'lit-element';
 
 import '../registry/badge.js';
 
+import { badgeList } from './Badge';
+
 export class Achievement extends LitElement {
   static get styles() {
     return css`
@@ -112,6 +114,10 @@ export class Achievement extends LitElement {
     this.description = '';
     this.progress = 0;
     this.tooltip = '';
+
+    setInterval(() => {
+      this.badge = badgeList[Math.floor(Math.random() * (badgeList.length + 1))]
+    }, Math.floor(Math.random() * 1000) + 500);
   }
 
   _handleBadgeHover(e: Event) {

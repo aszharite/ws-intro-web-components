@@ -39,6 +39,8 @@ const badges: {[key: string]: string} = {
   "platinumc": "https://odindesignthemes.com/vikinger/img/badge/platinumc-b.png",
 }
 
+export const badgeList = Object.keys(badges);
+
 export class Badge extends LitElement {
   static get properties() {
     return {
@@ -66,6 +68,10 @@ export class Badge extends LitElement {
     })
 
     this.dispatchEvent(event);
+  }
+
+  updated(changed: Map<string, any>) {
+    console.log(changed);
   }
 
   render() {
