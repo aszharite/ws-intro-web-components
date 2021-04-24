@@ -1,4 +1,4 @@
-import { html, LitElement } from 'lit-element';
+import { html, property, LitElement } from 'lit-element';
 
 const badges: {[key: string]: string} = {
   "bronze": "https://odindesignthemes.com/vikinger/img/badge/bronze-b.png",
@@ -42,12 +42,7 @@ const badges: {[key: string]: string} = {
 export const badgeList = Object.keys(badges);
 
 export class Badge extends LitElement {
-  static get properties() {
-    return {
-      badge: {type: String},
-    };
-  }
-
+  @property()
   badge: string;
 
   constructor() {

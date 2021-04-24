@@ -1,4 +1,4 @@
-import { html, css, LitElement } from 'lit-element';
+import { html, css, property, LitElement } from 'lit-element';
 
 import '../registry/badge.js';
 
@@ -86,24 +86,19 @@ export class Achievement extends LitElement {
     `;
   }
 
-  static get properties() {
-    return {
-      badge: {type: String},
-      title: {type: String},
-      description: {type: String},
-      progress: {type: String},
-      tooltip: {type: String},
-    }
-  }
-
+  @property()
   badge: string;
 
+  @property()
   title: string;
 
+  @property()
   description: string;
 
+  @property()
   progress: number;
 
+  @property()
   tooltip: string;
 
   constructor() {
