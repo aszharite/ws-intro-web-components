@@ -8,6 +8,8 @@
   <base href="/">
 
   <style>
+    @import url('https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700&display=swap');
+
     html,
     body {
       margin: 0;
@@ -15,12 +17,39 @@
       font-family: sans-serif;
       background-color: #ededed;
     }
+
+    div.gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
+      padding: 16px;
+    }
+
+    div.gallery > * {
+      margin: 16px;
+    }
   </style>
   <title>JsLeague Web Components Workshop</title>
 </head>
 
 <body>
-  <jsl-achievement></jsl-achievement>
+  <div class="gallery">
+    <jsl-achievement></jsl-achievement>
+    <jsl-achievement></jsl-achievement>
+    <jsl-achievement></jsl-achievement>
+    <jsl-achievement></jsl-achievement>
+    <jsl-achievement></jsl-achievement>
+    <jsl-achievement></jsl-achievement>
+    <jsl-achievement></jsl-achievement>
+    <jsl-achievement></jsl-achievement>
+    <jsl-achievement></jsl-achievement>
+    <jsl-achievement></jsl-achievement>
+    <jsl-achievement></jsl-achievement>
+    <jsl-achievement></jsl-achievement>
+    <jsl-achievement></jsl-achievement>
+    <jsl-achievement></jsl-achievement>
+    <jsl-achievement></jsl-achievement>
+    <jsl-achievement></jsl-achievement>
+  </div>
 
   <script type="module" src="./out-tsc/src/registry/badge.js"></script>
   <script type="module" src="./out-tsc/src/registry/achievement.js"></script>
