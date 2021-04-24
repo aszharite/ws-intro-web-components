@@ -114,11 +114,15 @@ export class Achievement extends LitElement {
     this.tooltip = '';
   }
 
+  _handleBadgeHover(e: Event) {
+    console.log('hover inside achievement component');
+    console.log(e);
+  }
 
   render() {
     return html`
       <div class="achievement-card">
-        <jsl-badge badge="${this.badge}"></jsl-badge>
+        <jsl-badge badge="${this.badge}" @badge-hover="${this._handleBadgeHover}"></jsl-badge>
         <p class="stat-title">${this.title}</p>
         <p class="stat-description">${this.description}</p>
         <div class="stat-progress">

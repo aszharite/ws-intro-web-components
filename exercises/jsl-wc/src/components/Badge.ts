@@ -54,9 +54,27 @@ export class Badge extends LitElement {
     this.badge = '';
   }
 
+  _handleHover() {
+    console.log('hover inside badge component');
+
+    const event = new CustomEvent('badge-hover', {
+      detail: {
+        badge: this.badge
+      },
+      bubbles: true,
+      composed: true
+    })
+
+    this.dispatchEvent(event);
+  }
+
   render() {
     return html`
-      <img src="${badges[this.badge]}" alt="${this.badge}" />
+      <img 
+        src="${badges[this.badge]}" 
+        alt="${this.badge}" 
+        @focus="${() => this._handleHover()}"
+        @mouseover="${() => this._handleHover()}" />
     `;
   }
 }
